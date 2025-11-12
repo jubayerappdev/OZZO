@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".views.login.LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher_foreground"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"/>
 
-</FrameLayout>
+    <TextView
+        android:layout_margin="@dimen/_32sdp"
+        android:textColor="#31694E"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bebas_neue"
+        android:gravity="center"
+        android:text="Login to OZZO App"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="user email"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="user password"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:textStyle="bold"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:fontFamily="@font/poppins"
+        android:text="Login" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:textStyle="bold"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="#31694E"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="New user?" />
+</LinearLayout>
