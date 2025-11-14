@@ -8,11 +8,14 @@
     android:orientation="vertical"
     tools:context=".views.login.LoginFragment">
 
-    <ImageView
-        android:layout_gravity="center"
-        android:src="@mipmap/ic_launcher_foreground"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_100sdp"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="@dimen/_256sdp"
+        android:layout_height="@dimen/_256sdp"
+        app:lottie_rawRes="@raw/ecom_2"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_gravity="center"/>
 
     <TextView
         android:layout_margin="@dimen/_32sdp"
