@@ -8,29 +8,19 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.creativeitinstitute.ozzo.R
+import com.creativeitinstitute.ozzo.base.BaseFragment
 import com.creativeitinstitute.ozzo.core.DataState
 import com.creativeitinstitute.ozzo.data.models.UserRegistration
 import com.creativeitinstitute.ozzo.databinding.FragmentLoginBinding
 import com.creativeitinstitute.ozzo.databinding.FragmentRegisterBinding
 import com.creativeitinstitute.ozzo.isEmpty
 
-class RegisterFragment : Fragment() {
-    lateinit var binding: FragmentRegisterBinding
+class RegisterFragment : BaseFragment<FragmentRegisterBinding>
+    (FragmentRegisterBinding::inflate) {
+
     private val viewModel: RegistrationViewModel by viewModels ()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentRegisterBinding.inflate(inflater, container, false)
-        setListener()
-        registrationResponse()
-        return binding.root
-    }
-
-
-
-    private fun setListener() {
+    override fun setListener() {
 
         with(binding){
             btnRegister.setOnClickListener {
@@ -56,24 +46,34 @@ class RegisterFragment : Fragment() {
         }
 
     }
+
+
+    //OOAD -> Object Oriented Analysis Design (Code Design)
+    override fun allObserver() {
+        registrationResponse()
+
+    }
+
     private fun registrationResponse() {
 
         viewModel.registrationResponse.observe(viewLifecycleOwner){
 
             when(it) {
                 is DataState.Error -> {
+                    loading.dismiss()
                     Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
                 }
                 is DataState.Loading -> {
+                    loading.show()
                     Toast.makeText(context, "Loading....", Toast.LENGTH_SHORT).show()
                 }
                 is DataState.Success -> {
+                    loading.dismiss()
                     Toast.makeText(context, "created User : ${it.data}", Toast.LENGTH_SHORT).show()
 
                 }
             }
         }
-
 
     }
 
