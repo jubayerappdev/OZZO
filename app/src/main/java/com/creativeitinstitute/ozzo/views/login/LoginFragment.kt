@@ -4,7 +4,9 @@ import android.widget.Toast
 import com.creativeitinstitute.ozzo.base.BaseFragment
 import com.creativeitinstitute.ozzo.databinding.FragmentLoginBinding
 import com.creativeitinstitute.ozzo.isEmpty
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
 

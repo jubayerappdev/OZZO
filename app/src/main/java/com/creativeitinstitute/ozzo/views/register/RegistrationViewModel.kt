@@ -7,8 +7,13 @@ import androidx.lifecycle.ViewModel
 import com.creativeitinstitute.ozzo.core.DataState
 import com.creativeitinstitute.ozzo.data.models.UserRegistration
 import com.creativeitinstitute.ozzo.data.repository.AuthRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class RegistrationViewModel : ViewModel() {
+@HiltViewModel
+class RegistrationViewModel @Inject constructor(
+    private val authService : AuthRepository
+) : ViewModel() {
 
    private val _registrationResponse = MutableLiveData<DataState<UserRegistration>>()
     val registrationResponse : LiveData<DataState<UserRegistration>> = _registrationResponse
@@ -16,8 +21,6 @@ class RegistrationViewModel : ViewModel() {
     fun userRegistration(user: UserRegistration){
 
         _registrationResponse.postValue(DataState.Loading())
-
-        val authService = AuthRepository()
 
         authService.userRegistration(user).addOnSuccessListener {
             _registrationResponse.postValue(DataState.Success(user))

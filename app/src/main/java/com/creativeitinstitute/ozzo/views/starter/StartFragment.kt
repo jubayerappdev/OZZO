@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.creativeitinstitute.ozzo.R
 import com.creativeitinstitute.ozzo.databinding.FragmentStartBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class StartFragment : Fragment() {
 
     lateinit var binding: FragmentStartBinding
