@@ -1,4 +1,4 @@
-package com.creativeitinstitute.ozzo.views.dashboard
+package com.creativeitinstitute.ozzo.views.dashboard.seller.upload
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,17 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.creativeitinstitute.ozzo.R
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
-class DashboardFragment : Fragment() {
+class UploadProductFragment : Fragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+        return inflater.inflate(R.layout.fragment_upload_product, container, false)
     }
 
 

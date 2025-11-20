@@ -1,5 +1,6 @@
 package com.creativeitinstitute.ozzo.views.register
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -9,6 +10,7 @@ import com.creativeitinstitute.ozzo.core.DataState
 import com.creativeitinstitute.ozzo.data.models.UserRegistration
 import com.creativeitinstitute.ozzo.databinding.FragmentRegisterBinding
 import com.creativeitinstitute.ozzo.isEmpty
+import com.creativeitinstitute.ozzo.views.dashboard.seller.SellerDashboard
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -72,6 +74,8 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>
                     loading.dismiss()
 
                     Toast.makeText(context, "created User : ${it.data}", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(requireContext(), SellerDashboard::class.java))
+                    requireActivity().finish()
 
                 }
             }
