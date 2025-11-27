@@ -20,7 +20,8 @@ navigationUiKtx = "2.9.6"
 fragment = "1.8.9"
 lottie = "6.7.1"
 hilt = "2.57.1"
-
+imagePicker = "2.1"
+coil= "2.7.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,6 +43,8 @@ androidx-fragment = { group = "androidx.fragment", name = "fragment", version.re
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+imagePicker = { group = "com.github.dhaval2404", name = "imagePicker", version.ref = "imagePicker" }
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 
 
 
